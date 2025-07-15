@@ -1,0 +1,24 @@
+# Terraform state & secrets
+*.tfstate
+*.tfstate.backup
+terraform.tfvars
+terraform.tfvars.json
+override.tf
+override.tf.json
+
+# Terraform working directory
+.terraform/
+.terraform.lock.hcl
+
+# Crash logs
+crash.log
+
+# IDE/editor noise
+*.log
+*.swp
+*.bak
+*.tmp
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

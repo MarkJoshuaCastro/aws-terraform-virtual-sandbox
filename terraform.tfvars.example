@@ -1,0 +1,44 @@
+region                = "us-east-1"
+vpc_name              = "VPC_Main"
+vpc_cidr              = "10.0.0.0/16"
+public_subnet_name    = "Public"
+public_subnet_cidr    = "10.0.1.0/24"
+private_1_subnet_name = "Private_A"
+private_1_subnet_cidr = "10.0.2.0/24"
+private_2_subnet_name = "Private_B"
+private_2_subnet_cidr = "10.0.3.0/24"
+igw_name              = "IGW"
+vpc_endpoint_name     = "VPC_EP"
+user_ip               = "YOUR.IP.ADDRESS"
+
+iam_role_name   = "EC2_S3"
+iam_description = "Gives private subnet EC2 instances read-only access to S3"
+
+iam_assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": { "Service": "ec2.amazonaws.com" },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+EOF
+
+iam_policy_arns = [
+  "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
+]
+
+
+public_instance_name    = "Public"
+private_1_instance_name = "Private_A"
+private_2_instance_name = "Private_B"
+
+ec2_ami_id        = "REMOVED_AMI_ID"  # Replace with a valid AMI ID
+ec2_instance_type = "t2.micro"
+ec2_key_pair      = "your-keypair-name"
+
+
+
