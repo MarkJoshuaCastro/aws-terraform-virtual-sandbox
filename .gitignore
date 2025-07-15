@@ -22,3 +22,6 @@ crash.log
 .idea/
 .DS_Store
 Thumbs.db
+
+# Local configuration files
+*.exe
