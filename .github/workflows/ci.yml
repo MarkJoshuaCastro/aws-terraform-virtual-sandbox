@@ -3,6 +3,8 @@ name: Terraform CI Test
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - '.github/workflows/**'
   pull_request:
     branches: [ main ]
   workflow_dispatch:
@@ -13,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./terraform  # Adjust if your .tf files are elsewhere
+        working-directory:  # Adjust if your .tf files are elsewhere
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
