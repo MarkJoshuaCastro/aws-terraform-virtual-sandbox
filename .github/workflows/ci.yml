@@ -39,7 +39,7 @@ jobs:
         echo 'private_2_subnet_cidr = "10.0.3.0/24"' >> terraform.tfvars
         echo 'igw_name              = "IGW"' >> terraform.tfvars
         echo 'vpc_endpoint_name     = "VPC_EP"' >> terraform.tfvars
-        echo 'user_ip               = "REMOVED_IP "' >> terraform.tfvars
+        echo 'user_ip               = "REMOVED_IP"' >> terraform.tfvars
 
         echo 'iam_role_name         = "EC2_S3"' >> terraform.tfvars
         echo 'iam_description       = "Gives private subnet EC2 instances read-only access to S3"' >> terraform.tfvars
